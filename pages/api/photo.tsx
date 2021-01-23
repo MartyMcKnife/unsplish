@@ -16,12 +16,10 @@ handler.post(async (req, res) => {
     label: form.label,
     user: form.user,
   });
-  res
-    .status(200)
-    .json({
-      message: "Sucessfully added item to database",
-      contents: { url: form.url, label: form.label, user: form.user },
-    });
+  res.status(200).json({
+    message: "Sucessfully added item to database",
+    contents: { url: form.url, label: form.label, user: form.user },
+  });
 });
 
 export default handler;

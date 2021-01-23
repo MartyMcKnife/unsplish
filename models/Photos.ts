@@ -1,4 +1,10 @@
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
+
+export interface Iphoto extends Document {
+  url: string;
+  label: string;
+  user: string;
+}
 
 const photo = new mongoose.Schema({
   url: String,
@@ -6,4 +12,5 @@ const photo = new mongoose.Schema({
   user: String,
 });
 
-export const Photo = mongoose.model("Photo", photo);
+export const Photo =
+  mongoose.models.Photo || mongoose.model<Iphoto>("Photo", photo);

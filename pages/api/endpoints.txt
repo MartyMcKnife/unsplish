@@ -1,5 +1,6 @@
-POST /photo - adds a new url, label and id to database
-DELETE /photo/[id] - removes corresponding id from database
+POST /photo - adds a new url, label and id to database - DONE
+GET /photo/[label] - gets a list of photos for corresponding label - DONE
+DELETE /photo/[label] - removes corresponding id from database
 GET /photo/[user] - gets all photos for user (sends back label, url and id) 
-GET /photo/[label] - gets a list of photos for corresponding label
+
  (User will be a uuid stored in local storage)
