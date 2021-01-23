@@ -1,6 +1,6 @@
 import handler from "./../../../middleware/handler";
 import dbConnect from "./../../../utils/dbConnect";
-import { Iphoto, Photo } from "./../../../models/Photos";
+import { Photo } from "./../../../models/Photos";
 
 handler.get(async (req, res) => {
   const {
@@ -30,6 +30,29 @@ handler.get(async (req, res) => {
       }
     }
   );
+});
+
+handler.delete(async (req, res) => {
+  const {
+    query: { label },
+  } = req;
+
+  await dbConnect();
+
+  await Photo.findOneAndDelete({ label: label }, null, (err, doc) => {
+    if (err) {
+      res.status(503).json({
+        message: "Looks like mongoose had an unexpected error",
+        error: err,
+      });
+    } else {
+      if (doc) {
+        res.status(200).json({ message: `Successfully deleted ${label}` });
+      } else {
+        res.status(400).json({ message: `No image called ${label}` });
+      }
+    }
+  });
 });
 
 export default handler;
