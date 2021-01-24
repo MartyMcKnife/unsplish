@@ -1,6 +1,6 @@
-import handler from "./../../middleware/handler";
-import dbConnect from "./../../utils/dbConnect";
-import { Photo } from "./../../models/Photos";
+import handler from "./../../../middleware/handler";
+import dbConnect from "./../../../utils/dbConnect";
+import { Photo } from "./../../../models/Photos";
 
 interface Input {
   user: string;
