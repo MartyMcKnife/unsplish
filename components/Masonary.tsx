@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import useSWR from "swr";
 import axios from "axios";
 import Masonry from "react-masonry-css";
@@ -16,11 +16,14 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 interface Props {
   uuid: string;
   newUser: boolean;
-  pin: string;
+  search: string;
 }
 
-export default function Masonary({ uuid, newUser, pin }: Props): ReactElement {
-  const [search, setSearch] = useState("");
+export default function Masonary({
+  uuid,
+  newUser,
+  search,
+}: Props): ReactElement {
   let { data, error }: IGet =
     !newUser && useSWR(`/api/photo/${uuid}/${search}`, fetcher);
 

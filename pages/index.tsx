@@ -9,6 +9,7 @@ import React, { useState } from "react";
 const IndexPage = () => {
   const [user, setUser] = useState<user>({});
   const [newUser, setnewUser] = useState(true);
+  const [search, setSearch] = useState("");
 
   if (typeof window !== "undefined") {
     const user = localStorage.getItem("user");
@@ -24,8 +25,8 @@ const IndexPage = () => {
 
       <div className={`mx-6 md:mx-24 my-10`}>
         {newUser && <NewUser setUser={setUser} />}
-        <Header uuid={user.uuid} />
-        <Masonary uuid={user.uuid} pin={user.pin} newUser={newUser} />
+        <Header uuid={user.uuid} setSearch={setSearch} />
+        <Masonary uuid={user.uuid} newUser={newUser} search={search} />
       </div>
     </>
   );
