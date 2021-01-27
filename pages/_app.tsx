@@ -22,6 +22,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="robots" content="index, follow" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
+        <script src="https://kit.fontawesome.com/4dd695d5aa.js"></script>
       </Head>
 
       <Component {...pageProps} />
