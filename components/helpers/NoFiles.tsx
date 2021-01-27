@@ -11,7 +11,6 @@ export default function NoFiles(): ReactElement {
 
       <h2 className="text-lg font-light text-center">
         Darn. Looks like we couldn't find any photos <br />
-        
         Try adding some by clicking <i>Add Photo</i> on the top right
       </h2>
     </div>
