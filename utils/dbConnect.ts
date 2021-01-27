@@ -9,14 +9,18 @@ const dbConnect = async () => {
   console.log(uri);
   if (uri) {
     console.log("Attempting to connect to  Mongoose");
-    const connection = mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    });
+    try {
+      const connection = mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true,
+      });
 
-    return connection;
+      return connection;
+    } catch (error) {
+      console.error(error);
+    }
   } else {
     throw new Error("No URI provided for Mongoose");
   }
