@@ -24,7 +24,7 @@ const IndexPage = () => {
 
       <div className={`mx-6 md:mx-24 my-10`}>
         {newUser && <NewUser setUser={setUser} />}
-        <Header />
+        <Header uuid={user.uuid} />
         <Masonary uuid={user.uuid} pin={user.pin} newUser={newUser} />
       </div>
     </>

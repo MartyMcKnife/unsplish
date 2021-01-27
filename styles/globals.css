@@ -7,6 +7,49 @@
     -webkit-animation: bounce-in-bottom 0.8s both;
     animation: bounce-in-bottom 0.8s both;
   }
+  .slide-top {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+
+  @keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
   @-webkit-keyframes bounce-in-bottom {
     0% {
@@ -115,11 +158,5 @@
 
   .modal {
     background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }

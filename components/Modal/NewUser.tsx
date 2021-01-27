@@ -53,8 +53,9 @@ export default function Modal({ setUser }: Props): ReactElement {
             required
           />
           <input
-            className="rounded-md py-1 px-3 bg-gray-200"
+            className="rounded-md py-1 px-3 bg-green-500 shadow-sm"
             type="submit"
+            value="Submit"
           ></input>
         </form>
       </div>

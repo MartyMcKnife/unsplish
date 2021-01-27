@@ -1,4 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
+
+import Info from "./Info";
+import Delete from "./../Modal/Delete";
 
 interface Props {
   url: string;
@@ -6,11 +9,30 @@ interface Props {
 }
 
 export default function Image({ url, label }: Props): ReactElement {
+  const [info, setInfo] = useState(false);
+
+  const [show, setShow] = useState(false);
+
+  const handleClick = () => {
+    setShow(true);
+  };
+
   return (
-    <img
-      src={url}
-      alt={label}
-      className="transition duration-200 transform hover:-translate-y-1 hover:scale-110 ease-in-out rounded-lg shadow-md my-10"
-    ></img>
+    <div className="block mb-10">
+      {show && <Delete show={setShow} label={label} />}
+      <div
+        className="relative transition duration-200 ease-in-out transform hover:scale-105 w-auto inline-block"
+        onMouseEnter={() => setInfo(true)}
+        onMouseLeave={() => setInfo(false)}
+      >
+        {" "}
+        {info && <Info label={label} handleClick={handleClick} />}
+        <img
+          src={url}
+          alt={label}
+          className="z-0 hover:shadow-lg rounded-lg shadow-md"
+        ></img>
+      </div>
+    </div>
   );
 }
