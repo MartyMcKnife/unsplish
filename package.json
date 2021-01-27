@@ -21,9 +21,11 @@
     "postcss": "^8.2.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-hook-form": "^6.14.2",
     "react-masonry-css": "^1.0.14",
     "swr": "^0.4.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/morgan": "^1.9.2",

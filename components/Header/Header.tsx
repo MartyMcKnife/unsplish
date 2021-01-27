@@ -6,7 +6,7 @@ import Search from "./Search";
 
 export default function Header(): ReactElement {
   return (
-    <header className="flex justify-start items-center mx-6 md:mx-24 my-10">
+    <header className="flex justify-start items-center mb-12">
       <Logo />
       <Search />
       <Add />

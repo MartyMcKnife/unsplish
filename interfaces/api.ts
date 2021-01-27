@@ -1,8 +1,10 @@
+import { AxiosError } from "axios";
+
 //GET /photo/[user] and GET /photo/[user]/[label]
 
 export interface IGet {
   data?: GetResp[];
-  error?: Error;
+  error?: AxiosError;
 }
 
 export interface GetResp {
@@ -14,7 +16,7 @@ export interface GetResp {
 
 export interface IDelete {
   data: DelResp;
-  error: Error;
+  error?: AxiosError;
 }
 
 export interface DelResp {
@@ -24,8 +26,8 @@ export interface DelResp {
 //POST /photo
 
 export interface IPost {
-  data: PostResp;
-  error: Error;
+  data?: PostResp;
+  error?: AxiosError;
 }
 
 export interface PostResp {
