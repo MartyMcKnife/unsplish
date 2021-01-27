@@ -31,7 +31,7 @@ export default function Delete({ show, label }: Props): ReactElement {
           return (
             <Error
               status={err.response.status}
-              message={err.response.data.message}
+              message={err.response.statusText}
             />
           );
         } else {

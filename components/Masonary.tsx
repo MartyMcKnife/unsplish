@@ -39,7 +39,7 @@ export default function Masonary({
       ) : (
         <Error
           status={error.response.status}
-          message={error.response.data.message}
+          message={error.response.statusText}
         />
       );
     }

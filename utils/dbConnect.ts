@@ -6,6 +6,7 @@ const dbConnect = async () => {
   }
 
   const uri = process.env.MONGODB_URI;
+  console.log(uri);
   if (uri) {
     console.log("Attempting to connect to  Mongoose");
     const connection = mongoose.connect(uri, {

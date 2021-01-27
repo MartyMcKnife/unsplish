@@ -29,7 +29,7 @@ export default function AddModal({ uuid, close }: Props): ReactElement {
         return (
           <Error
             status={err.response.status}
-            message={err.response.data.message}
+            message={err.response.statusText}
           />
         );
       } else {
