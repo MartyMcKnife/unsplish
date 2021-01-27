@@ -8,7 +8,6 @@ interface Props {
 
 export default function Search({ setSearch }: Props): ReactElement {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(`Search: ${e.target.value}`);
     if (e.target.value) {
       setSearch(e.target.value);
     } else {
